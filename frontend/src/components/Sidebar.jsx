@@ -80,7 +80,7 @@ const Sidebar = ({ user, isCollapsed, setIsCollapsed }) => {
               : sidebarStyles.menuItem.inactive,
             isCollapsed
               ? sidebarStyles.menuItem.collapsed
-              : sidebarStyles.menuItem.expanded,
+              : sidebarStyles.menuItem.expanded
           )}
           onMouseEnter={() => setActiveHover(text)}
           onMouseLeave={() => setActiveHover(null)}
@@ -157,7 +157,7 @@ const Sidebar = ({ user, isCollapsed, setIsCollapsed }) => {
               sidebarStyles.userProfileContainer.base,
               isCollapsed
                 ? sidebarStyles.userProfileContainer.collapsed
-                : sidebarStyles.userProfileContainer.expanded,
+                : sidebarStyles.userProfileContainer.expanded
             )}
           >
             <div className=" flex items-center">
@@ -189,25 +189,14 @@ const Sidebar = ({ user, isCollapsed, setIsCollapsed }) => {
               sidebarStyles.footerContainer.base,
               isCollapsed
                 ? sidebarStyles.footerContainer.collapsed
-                : sidebarStyles.footerContainer.expanded,
+                : sidebarStyles.footerContainer.expanded
             )}
           >
-            <Link
-              className={cn(
-                sidebarStyles.footerLink.base,
-                isCollapsed && sidebarStyles.footerLink.collapsed,
-              )}
-              to="https://www.hexagondigitalservices.com/contact"
-            >
-              <HelpCircle size={20} className=" text-gray-500" />
-              {!isCollapsed && <span>Support</span>}
-            </Link>
-
             <button
               onClick={handleLogout}
               className={cn(
                 sidebarStyles.logoutButton.base,
-                isCollapsed && sidebarStyles.logoutButton.collapsed,
+                isCollapsed && sidebarStyles.logoutButton.collapsed
               )}
             >
               <LogOut size={20} className=" text-gray-500" />
@@ -282,7 +271,7 @@ const Sidebar = ({ user, isCollapsed, setIsCollapsed }) => {
                             sidebarStyles.mobileMenuItem.base,
                             pathname === path
                               ? sidebarStyles.mobileMenuItem.active
-                              : sidebarStyles.mobileMenuItem.inactive,
+                              : sidebarStyles.mobileMenuItem.inactive
                           )}
                         >
                           <span
@@ -302,14 +291,6 @@ const Sidebar = ({ user, isCollapsed, setIsCollapsed }) => {
                 </div>
 
                 <div className={sidebarStyles.mobileFooter}>
-                  <Link
-                    onClick={() => setMobileOpen(false)}
-                    to="https://www.hexagondigitalservices.com/contact"
-                    className={sidebarStyles.mobileFooterLink}
-                  >
-                    <HelpCircle size={20} className=" text-gray-500" />
-                    <span>Support</span>
-                  </Link>
                   <button
                     onClick={handleLogout}
                     className={sidebarStyles.mobileLogoutButton}
