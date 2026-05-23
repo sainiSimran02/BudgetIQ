@@ -4,7 +4,10 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { ArrowLeft, Eye, EyeOff, Lock, Mail, User } from "lucide-react";
 
-const Signup = ({ API_URL = "http://localhost:4000", onSignup }) => {
+const Signup = ({
+  API_URL = "https://budgetiq-backend-lkxo.onrender.com",
+  onSignup,
+}) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -66,7 +69,7 @@ const Signup = ({ API_URL = "http://localhost:4000", onSignup }) => {
       const res = await axios.post(
         `${API_URL}/api/user/register`,
         { name, email, password },
-        { headers: { "Content-Type": "application/json" } },
+        { headers: { "Content-Type": "application/json" } }
       );
       const data = res.data || {};
       const token = data.token ?? null;

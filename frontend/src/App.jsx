@@ -15,7 +15,7 @@ import Income from "./pages/Income";
 import Expense from "./pages/Expense";
 import Profile from "./pages/Profile";
 
-const API_URL = "http://localhost:4000";
+const API_URL = "https://budgetiq-backend-lkxo.onrender.com";
 
 // to get transaction from localstorage
 const getTransactionsFromStorage = () => {
@@ -112,8 +112,8 @@ const App = () => {
         const storedUser = localUserRaw
           ? JSON.parse(localUserRaw)
           : sessionUserRaw
-            ? JSON.parse(sessionUserRaw)
-            : null;
+          ? JSON.parse(sessionUserRaw)
+          : null;
 
         const storedToken = localToken || sessionToken || null;
         const tokenFromLocal = !!localToken;
@@ -135,7 +135,7 @@ const App = () => {
           } catch (fetchErr) {
             console.warn(
               "Could not fetch profile with the stored token:",
-              fetchErr,
+              fetchErr
             );
             clearAuth();
           }
@@ -182,7 +182,7 @@ const App = () => {
     setTransactions((p) => [newTransaction, ...p]);
   const editTransaction = (id, updatedTransaction) =>
     setTransactions((p) =>
-      p.map((t) => (t.id === id ? { ...updatedTransaction, id } : t)),
+      p.map((t) => (t.id === id ? { ...updatedTransaction, id } : t))
     );
   const deleteTransaction = (id) =>
     setTransactions((p) => p.filter((t) => t.id !== id));
