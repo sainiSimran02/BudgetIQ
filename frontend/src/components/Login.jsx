@@ -107,7 +107,7 @@ const Login = ({
           </div>
           <h1 className={loginStyles.headerTitle}>Welcome Back</h1>
           <p className={loginStyles.headerSubtitle}>
-            Sign in to your ExpenseTracker account
+            Sign in to your BudgetIQ account
           </p>
         </div>
 
